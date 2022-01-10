@@ -72,6 +72,11 @@ options:
           - The number of front ports which may be mapped to each rear port
         required: false
         type: int
+      label:
+        description:
+          - The physical label of the front port
+        required: false
+        type: str
       description:
         description:
           - Description of the rear port
@@ -181,6 +186,7 @@ def main():
                         type="str",
                     ),
                     positions=dict(required=False, type="int"),
+                    label=dict(required=False, type="str"),
                     description=dict(required=False, type="str"),
                     tags=dict(required=False, type="list", elements="raw"),
                 ),

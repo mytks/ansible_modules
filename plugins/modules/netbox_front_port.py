@@ -77,6 +77,11 @@ options:
           - The position of the rear port this front port is connected to
         required: false
         type: int
+      label:
+        description:
+          - The physical label of the front port
+        required: false
+        type: str
       description:
         description:
           - Description of the front port
@@ -190,6 +195,7 @@ def main():
                     ),
                     rear_port=dict(required=True, type="raw"),
                     rear_port_position=dict(required=False, type="int"),
+                    label=dict(required=False, type="str"),
                     description=dict(required=False, type="str"),
                     tags=dict(required=False, type="list", elements="raw"),
                 ),

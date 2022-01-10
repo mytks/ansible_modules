@@ -63,6 +63,7 @@
       type: bnc
       rear_port: Rear Port
       rear_port_position: 5
+      label: test label
       description: test description
     state: present
   register: test_three
@@ -78,6 +79,7 @@
       - test_three['front_port']['type'] == "bnc"
       - test_three['front_port']['rear_port'] == 1
       - test_three['front_port']['rear_port_position'] == 5
+      - test_three['front_port']['label'] == "test label"
       - test_three['front_port']['description'] == "test description"
       - test_three['msg'] == "front_port Front Port updated"
 

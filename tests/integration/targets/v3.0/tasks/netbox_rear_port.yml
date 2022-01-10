@@ -58,6 +58,7 @@
       device: test100
       type: bnc
       positions: 5
+      label: test label
       description: test description
     state: present
   register: test_three
@@ -72,6 +73,7 @@
       - test_three['rear_port']['device'] == 1
       - test_three['rear_port']['type'] == "bnc"
       - test_three['rear_port']['positions'] == 5
+      - test_three['rear_port']['label'] == "test label"
       - test_three['rear_port']['description'] == "test description"
       - test_three['msg'] == "rear_port Rear Port updated"
 
